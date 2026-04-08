@@ -25,7 +25,7 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - uses: pnpm/action-setup@v4
         with:
@@ -54,7 +54,7 @@ jobs:
       security-events: write
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Run Trivy (fs)
         uses: aquasecurity/trivy-action@57a97c7e7821a5776cebc9bb87c984fa69cba8f1
@@ -87,7 +87,7 @@ jobs:
       image: semgrep/semgrep
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - run: semgrep scan --config=auto --sarif --output=semgrep-results.sarif || true
 
@@ -102,7 +102,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - uses: pnpm/action-setup@v4
         with:
@@ -136,7 +136,7 @@ jobs:
         language: ['javascript', 'typescript']
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - uses: github/codeql-action/init@v3
         with:
