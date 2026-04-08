@@ -1,0 +1,34 @@
+# Source files
+src/
+tests/
+examples/
+
+# Config files
+tsconfig.json
+tsconfig.build.json
+vitest.config.ts
+vitest.e2e.config.ts
+biome.json
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+
+# Development
+*.log
+.DS_Store
+.env
+.env.*
+coverage/
+node_modules/
+.vitest/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# node config
+.node-version
+.npmrc
