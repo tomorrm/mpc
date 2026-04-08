@@ -1,0 +1,56 @@
+{
+  "name": "@tomorrm/mpc",
+  "author": "tomorrm",
+  "license": "MIT",
+  "version": "0.1.0",
+  "description": "Multi-database and multi-tenant library for Prisma",
+  "keywords": [
+    "prisma",
+    "multi-tenant",
+    "multi-database",
+    "typescript"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tomorrm/mpc.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tomorrm/mpc/issues"
+  },
+  "homepage": "https://github.com/tomorrm/mpc#readme",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prisma:generate": "prisma generate",
+    "pretypecheck": "pnpm run -s prisma:generate",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "typecheck:watch": "tsc -w --noEmit -p tsconfig.json",
+    "check": "pnpm run -s typecheck && pnpm run -s lint",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "format": "biome format --write .",
+    "format:check": "biome format ."
+  },
+  "peerDependencies": {
+    "@prisma/client": "^4.0.0 || ^5.0.0 || ^6.0.0",
+    "prisma": "^4.0.0 || ^5.0.0 || ^6.0.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.4.10",
+    "@prisma/client": "6.19.3",
+    "@types/node": "25.5.2",
+    "prisma": "6.19.3",
+    "typescript": "6.0.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": "10.24.0",
+    "npm": "please_use_pnpm_instead"
+  },
+  "packageManager": "pnpm@10.24.0"
+}
