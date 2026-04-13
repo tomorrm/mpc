@@ -8,17 +8,17 @@ Coming Soon...
 
 ## Installation
 
-> **Note:** This package is not yet published to npm. Install directly from GitHub.
- 
+> **Status:** This project is currently published as source code on GitHub only.
+> npm package distribution is not available yet.
+
 ```bash
-npm install github:tomorrm/mpc
-# or
-yarn add github:tomorrm/mpc
-# or
-pnpm add github:tomorrm/mpc
+git clone https://github.com/tomorrm/mpc.git
+cd mpc
+pnpm install
+pnpm run check
 ```
 
-> **Peer dependencies:** `@prisma/client` must be installed in your project.
+> **Note:** Usage examples below describe the API and intended integration style.
 
 ## Quick Start
 
@@ -98,10 +98,12 @@ Each tenant's schema must exist before use. Create it with:
 CREATE SCHEMA tenant_a;
 ```
 
+Use `lowercase_snake_case` tenant IDs to avoid quoted identifiers in PostgreSQL.
+
 Then apply migrations to the new schema:
 
 ```bash
-DATABASE_URL="postgresql://user:ppassword@host:5432/mydb?schema=tenant_a" \
+DATABASE_URL="postgresql://user:password@host:5432/mydb?schema=tenant_a" \
   npx prisma migrate deploy
 ```
 
@@ -190,6 +192,8 @@ Validates and returns the tenant ID.
 Allowed characters: `a-z A-Z 0-9 _ -`
 
 Throws `Error` if the ID contains invalid characters.
+
+For cross-database portability, use `lowercase_snake_case` (`^[a-z0-9_]+$`), for example `tenant_a`.
 
 ---
 
